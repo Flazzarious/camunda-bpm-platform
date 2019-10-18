@@ -49,4 +49,6 @@ public interface HistoricActivityStatistics {
    */
   long getCompleteScope();
 
+  long getIncidents();
+
 }

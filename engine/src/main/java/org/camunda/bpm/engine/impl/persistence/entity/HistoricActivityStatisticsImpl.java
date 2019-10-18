@@ -30,6 +30,7 @@ public class HistoricActivityStatisticsImpl implements HistoricActivityStatistic
   protected long finished;
   protected long canceled;
   protected long completeScope;
+  protected long incidents;
 
   public String getId() {
     return id;
@@ -69,6 +70,14 @@ public class HistoricActivityStatisticsImpl implements HistoricActivityStatistic
 
   public void setCompleteScope(long completeScope) {
     this.completeScope = completeScope;
+  }
+
+  public long getIncidents() {
+    return incidents;
+  }
+
+  public void setIncidents(long incidents) {
+    this.incidents = incidents;
   }
 
 }
