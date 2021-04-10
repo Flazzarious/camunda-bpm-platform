@@ -44,7 +44,7 @@
     <dependency>
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine</artifactId>
-      <version>7.3.0</version>
+      <version>7.15.0</version>
     </dependency>
 
     <dependency>
@@ -117,14 +117,14 @@
                     <!-- create the SQL scripts so that the files exist even if they do not exist in the distribution. (this can be the case if there are no db
                       upgrades (yet) for a particular release ) -->
 
-                    <mkdir dir="${project.build.directory}/scripts-current/sql/upgrade/" />
+                    <mkdir dir="${project.build.directory}/scripts-current/sql/upgrade/"/>
 
-                    <touch file="${project.build.directory}/scripts-current/sql/upgrade/${database.type}_engine_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}_to_${camunda.current.majorVersion}.${camunda.current.minorVersion}.sql" />
-                    <touch file="${project.build.directory}/scripts-current/sql/upgrade/${database.type}_identity_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}_to_${camunda.current.majorVersion}.${camunda.current.minorVersion}.sql" />
+                    <touch file="${project.build.directory}/scripts-current/sql/upgrade/${database.type}_engine_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}_to_${camunda.current.majorVersion}.${camunda.current.minorVersion}.sql"/>
+                    <touch file="${project.build.directory}/scripts-current/sql/upgrade/${database.type}_identity_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}_to_${camunda.current.majorVersion}.${camunda.current.minorVersion}.sql"/>
 
                     <!-- patches for current minor version if any -->
                     <!-- 7.2.4 to 7.2.5 -->
-                    <touch file="${project.build.directory}/scripts-current/sql/upgrade/${database.type}_engine_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}_patch_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}.4_to_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}.5.sql" />
+                    <touch file="${project.build.directory}/scripts-current/sql/upgrade/${database.type}_engine_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}_patch_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}.4_to_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}.5.sql"/>
                   </target>
                 </configuration>
                 <goals>
@@ -140,7 +140,7 @@
                     <!-- copy mysql upgrade scripts from 7.3 for mariadb as with 7.5 mariadb has own scripts -->
                     <!-- TODO: if 7.2 patch scripts for mysql are created they probably also have to be copied for mariadb -->
 
-                    <copy file="${project.build.directory}/scripts-current/sql/upgrade/mysql_engine_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}_to_${camunda.current.majorVersion}.${camunda.current.minorVersion}.sql" tofile="${project.build.directory}/scripts-current/sql/upgrade/mariadb_engine_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}_to_${camunda.current.majorVersion}.${camunda.current.minorVersion}.sql" overwrite="true" />
+                    <copy file="${project.build.directory}/scripts-current/sql/upgrade/mysql_engine_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}_to_${camunda.current.majorVersion}.${camunda.current.minorVersion}.sql" tofile="${project.build.directory}/scripts-current/sql/upgrade/mariadb_engine_${camunda.previous.majorVersion}.${camunda.previous.minorVersion}_to_${camunda.current.majorVersion}.${camunda.current.minorVersion}.sql" overwrite="true"/>
 
                   </target>
                 </configuration>
